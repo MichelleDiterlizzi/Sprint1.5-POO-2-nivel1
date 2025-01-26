@@ -8,14 +8,19 @@ abstract class Animal {
     }
 
     abstract public function makeSound();
-
+    abstract public function __toString();
 }
 
 class Gato extends Animal{
 
     public function makeSound(){
         $sound = "Miaao!";
-        echo $sound;
+        return $sound;
+    }
+
+    public function __toString(){
+        $noise = "El verso de ". $this->name. " es " . $this->makeSound();
+        return $noise;
     }
 
 }
@@ -24,7 +29,11 @@ class Perro extends Animal{
 
     public function makeSound(){
         $sound = "Woof woof!";
-        echo $sound;
+        return $sound;
+    }
+    public function __toString(){
+        $noise = "El verso de ". $this->name. " es " . $this->makeSound();
+        return $noise;
     }
 }
 
